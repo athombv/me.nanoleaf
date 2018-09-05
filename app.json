@@ -1,6 +1,7 @@
 {
     "id": "me.nanoleaf",
     "sdk": 2,
+    "brandColor": "#3FAE49",
     "name": {
         "en": "Nanoleaf"
     },
