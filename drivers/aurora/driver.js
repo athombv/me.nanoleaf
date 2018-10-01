@@ -66,6 +66,8 @@ class NanoleafDriver extends Homey.Driver {
 	
 	onPair( socket ) {
 		
+		var trying = false;
+		
 		socket.on('list_devices', ( data, callback ) => {
 			
 			let devices = [];
@@ -90,25 +92,17 @@ class NanoleafDriver extends Homey.Driver {
 			if( !device ) return callback( new Error('invalid_device') );
 			
 			function getToken() {
-				
-				let numTries = 0;
-				
-				return new Promise((resolve, reject) => {
-					
+				trying = true;
+				return new Promise(resolve => {
 					function getTokenTry() {
-						numTries++;
-						device.api.newToken().then( token => {
-							console.log('token', token)
-							resolve( token );							
-						}).catch( err => {
-							
-							if( numTries > 30 )
-								return reject( new Error('Timeout') );
-							
-							setTimeout(() => {
-								getTokenTry();
-							}, 1000);
-						})
+						device.api.newToken()
+							.then(resolve)
+							.catch( err => {
+								if( !trying ) return resolve();
+								setTimeout(() => {
+									getTokenTry();
+								}, 1000);
+							});
 					}
 					
 					getTokenTry();
@@ -117,16 +111,21 @@ class NanoleafDriver extends Homey.Driver {
 			}
 			
 			getToken().then( token => {
+				if( !token ) return;
 				callback( null, {
 					name: device.name,
 					data: data,
 					store: { token }
-				})			
+				});
 			}).catch( err => {
 				callback( err );
 			})
 			
-		})
+		});
+		
+		socket.on('disconnect', function() {
+			trying = false;
+		});
 		
 	}
 	

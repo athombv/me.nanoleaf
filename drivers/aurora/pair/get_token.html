@@ -1,14 +1,31 @@
+<style type="text/css">
+.nanoleaf-hint {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+</style>
+
 <script type="text/javascript">
 var device = window.selected_devices[0];
 	device = JSON.parse(device);
-		
+				
 Homey.emit('get_token', device, function( err, result ){
-	if( err ) return Homey.alert( err.message || err.toString() );
+	if( err ) return Homey.alert(err, null, function(){
+		Homey.done();
+	});
+	
 	Homey.addDevice( result, function( err, result ){
-		if( err ) Homey.alert(err);
+		if( err ) return Homey.alert(err, null, function(){
+			Homey.done();
+		});
 		Homey.done();
 	});
 })
 </script>
 
-<p data-i18n="pair.instruction"></p>
+<div class="nanoleaf-hint">
+	<span data-i18n="pair.instruction"></span>
+</div>
