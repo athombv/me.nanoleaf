@@ -2,22 +2,30 @@
 .nanoleaf-hint {
 	height: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 }
+	.nanoleaf-hint img {
+		display: block;
+		margin-bottom: 1em;
+		max-width: 90%;
+	}
 </style>
 
 <script type="text/javascript">
 var device = window.selected_devices[0];
 	device = JSON.parse(device);
 				
-Homey.emit('get_token', device, function( err, result ){
+Homey.emit('get_token', device.id, function( err, result ){
 	if( err ) return Homey.alert(err, null, function(){
 		Homey.done();
 	});
-	
-	Homey.addDevice( result, function( err, result ){
+})
+
+Homey.on('device', function(device) {
+	Homey.addDevice( device, function( err, result ){
 		if( err ) return Homey.alert(err, null, function(){
 			Homey.done();
 		});
@@ -27,5 +35,6 @@ Homey.emit('get_token', device, function( err, result ){
 </script>
 
 <div class="nanoleaf-hint">
+	<img src="pair.svg" />
 	<span data-i18n="pair.instruction"></span>
 </div>

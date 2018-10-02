@@ -86,41 +86,34 @@ class NanoleafDriver extends Homey.Driver {
 			
 		})
 		
-		socket.on('get_token', ( data, callback ) => {
+		socket.on('get_token', ( deviceId, callback ) => {
 			
-			let device = this._foundDevices[ data.id ];
+			let device = this._foundDevices[ deviceId ];
 			if( !device ) return callback( new Error('invalid_device') );
 			
-			function getToken() {
-				trying = true;
-				return new Promise(resolve => {
-					function getTokenTry() {
-						device.api.newToken()
-							.then(resolve)
-							.catch( err => {
-								if( !trying ) return resolve();
-								setTimeout(() => {
-									getTokenTry();
-								}, 1000);
-							});
-					}
-					
-					getTokenTry();
-				});
-				
-			}
+			trying = true;
 			
-			getToken().then( token => {
-				if( !token ) return;
-				callback( null, {
-					name: device.name,
-					data: data,
-					store: { token }
-				});
-			}).catch( err => {
-				callback( err );
-			})
-			
+			function getTokenTry() {
+				device.api.newToken()
+					.then(token => {
+						trying = false;
+						socket.emit('device', {
+							name: device.name,
+							data: {
+								id: deviceId,
+							},
+							store: { token }
+						});
+					})
+					.catch( err => {
+						if( !trying ) return;
+						setTimeout(() => {
+							getTokenTry();
+						}, 1000);
+					});
+			}			
+			getTokenTry();
+			callback();
 		});
 		
 		socket.on('disconnect', function() {
