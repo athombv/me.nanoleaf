@@ -17,14 +17,15 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
-        "next": "get_token"
+        "next": "authenticate"
       },
       "options": {
         "singular": true
       }
     },
     {
-      "id": "get_token"
+      "id": "authenticate",
+      "$template": "authenticate"
     }
   ]
 }
