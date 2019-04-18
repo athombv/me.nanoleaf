@@ -9,7 +9,7 @@
     "en": "Adds support for Nanoleaf Aurora devices"
   },
   "category": "lights",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "compatibility": ">=2.1.1",
   "author": {
     "name": "Athom B.V."
