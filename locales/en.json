@@ -1,6 +1,6 @@
 {
-	"searching": "Searching for device on Network...",
+	"loading": "Searching for device on Network...",
 	"pair": {
-		"instruction": "Hold the <i class='fa fa-power-off'></i> button on your Nanoleaf device for 6 seconds..."
+		"instruction": "Hold the <i class='fa fa-power-off'></i> button on your Nanoleaf for 6 seconds..."
 	}
 }
