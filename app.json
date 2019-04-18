@@ -9,26 +9,39 @@
     "en": "Adds support for Nanoleaf Aurora devices"
   },
   "category": "lights",
-  "version": "1.1.1",
-  "compatibility": ">=1.5.0",
+  "version": "2.0.0",
+  "compatibility": ">=2.1.1",
   "author": {
-    "name": "Athom B.V.",
-    "email": "info@athom.nl"
+    "name": "Athom B.V."
   },
   "images": {
     "large": "/assets/images/large.jpg",
     "small": "/assets/images/small.jpg"
   },
+  "flow": {
+    "actions": [
+      {
+        "title": {
+          "en": "Set effect",
+          "nl": "Start een effect"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aurora|canvas"
+          },
+          {
+            "type": "autocomplete",
+            "name": "effect"
+          }
+        ],
+        "id": "set_effect"
+      }
+    ]
+  },
   "drivers": [
     {
-      "id": "aurora",
-      "name": {
-        "en": "Nanoleaf Aurora"
-      },
-      "images": {
-        "large": "/drivers/aurora/assets/images/large.jpg",
-        "small": "/drivers/aurora/assets/images/small.jpg"
-      },
       "class": "light",
       "capabilities": [
         "onoff",
@@ -38,57 +51,63 @@
         "light_temperature",
         "light_mode"
       ],
+      "images": {
+        "large": "/drivers/aurora/assets/images/large.jpg",
+        "small": "/drivers/aurora/assets/images/small.jpg"
+      },
       "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "next": "get_token"
+            "next": "authenticate"
           },
           "options": {
             "singular": true
           }
         },
         {
-          "id": "get_token"
+          "id": "authenticate"
         }
-      ]
-    }
-  ],
-  "flow": {
-    "actions": [
-      {
-        "id": "set_effect",
-        "title": {
-          "en": "Set effect",
-          "nl": "Start een effect"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=aurora"
-          },
-          {
-            "type": "autocomplete",
-            "name": "effect"
-          }
-        ]
+      ],
+      "name": {
+        "en": "Nanoleaf Aurora"
       },
-      {
-        "id": "set_rainbow",
-        "title": {
-          "en": "Set rainbow",
-          "nl": "Laat een regenboog zien"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=aurora"
+      "id": "aurora"
+    },
+    {
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "images": {
+        "large": "/drivers/canvas/assets/images/large.jpg",
+        "small": "/drivers/canvas/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "authenticate"
+          },
+          "options": {
+            "singular": true
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "id": "authenticate"
+        }
+      ],
+      "name": {
+        "en": "Nanoleaf Canvas"
+      },
+      "id": "canvas"
+    }
+  ]
 }

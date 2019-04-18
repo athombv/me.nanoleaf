@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Set effect",
+    "nl": "Start een effect"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aurora|canvas"
+    },
+    {
+      "type": "autocomplete",
+      "name": "effect"
+    }
+  ]
+}

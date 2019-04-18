@@ -1,0 +1,31 @@
+{
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.jpg",
+    "small": "{{driverAssetsPath}}/images/small.jpg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "authenticate"
+      },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "authenticate",
+      "$template": "authenticate"
+    }
+  ]
+}

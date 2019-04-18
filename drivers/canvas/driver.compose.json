@@ -1,0 +1,6 @@
+{
+  "name": {
+    "en": "Nanoleaf Canvas"
+  },
+  "$extends": "nanoleaf"
+}
