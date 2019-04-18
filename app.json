@@ -51,6 +51,38 @@
             "filter": "driver_id=aurora"
           }
         ]
+      },
+      {
+        "id": "set_effect",
+        "title": {
+          "en": "Set effect",
+          "nl": "Start een effect"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=canvas"
+          },
+          {
+            "type": "autocomplete",
+            "name": "effect"
+          }
+        ]
+      },
+      {
+        "id": "set_rainbow",
+        "title": {
+          "en": "Set rainbow",
+          "nl": "Laat een regenboog zien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=canvas"
+          }
+        ]
       }
     ]
   },

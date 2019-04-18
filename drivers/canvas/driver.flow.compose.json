@@ -1,0 +1,24 @@
+{
+  "actions": [
+    {
+      "id": "set_effect",
+      "title": {
+        "en": "Set effect",
+        "nl": "Start een effect"
+      },
+      "args": [
+        {
+          "type": "autocomplete",
+          "name": "effect"
+        }
+      ]
+    },
+    {
+      "id": "set_rainbow",
+      "title": {
+        "en": "Set rainbow",
+        "nl": "Laat een regenboog zien"
+      }
+    }
+  ]
+}

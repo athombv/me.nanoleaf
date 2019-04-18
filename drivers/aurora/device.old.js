@@ -167,30 +167,6 @@ class NanoleafDevice extends Homey.Device {
 		return this._api.setEffect( effect );
 	}
 	
-	setRainbow() {			
-		return this._api.setHue( Math.floor(Math.random() * 360) ).then(() => {
-			return this._api.layout()
-		}).then( result => {
-			
-			let list = [];
-			result.panels.forEach((panel, index) => {
-				
-				let hue = ( index / result.panels.length );					
-				let rgb = hslToRgb( hue, 1, 0.5 );
-				
-				list.push({
-					id: panel.id,
-					r: Math.floor( rgb.r * 255 ),
-					g: Math.floor( rgb.g * 255 ),
-					b: Math.floor( rgb.b * 255 ),
-				})
-			})
-						
-			return this._api.setStaticPanel(list)
-			
-		})
-	}
-	
 }
 
 module.exports = NanoleafDevice;
