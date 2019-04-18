@@ -1,0 +1,21 @@
+{
+  "id": "me.nanoleaf",
+  "sdk": 2,
+  "brandColor": "#3FAE49",
+  "name": {
+    "en": "Nanoleaf"
+  },
+  "description": {
+    "en": "Adds support for Nanoleaf Aurora devices"
+  },
+  "category": "lights",
+  "version": "2.0.0",
+  "compatibility": ">=2.1.1",
+  "author": {
+    "name": "Athom B.V."
+  },
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  }
+}

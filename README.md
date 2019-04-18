@@ -1,6 +1,6 @@
 # Nanoleaf
 
-Adds support for Nanoleaf Aurora devices.
+Adds support for Nanoleaf Aurora & Nanoleaf Canvas.
 
 Supported features:
 
