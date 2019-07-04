@@ -2,5 +2,6 @@
   "name": {
     "en": "Nanoleaf Canvas"
   },
+  "discovery": "nanoleaf-canvas",
   "$extends": "nanoleaf"
 }

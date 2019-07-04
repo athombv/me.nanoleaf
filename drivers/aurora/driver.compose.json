@@ -2,5 +2,6 @@
   "name": {
     "en": "Nanoleaf Aurora"
   },
+  "discovery": "nanoleaf-aurora",
   "$extends": "nanoleaf"
 }

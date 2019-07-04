@@ -17,5 +17,48 @@
   "images": {
     "large": "/assets/images/large.jpg",
     "small": "/assets/images/small.jpg"
+  },
+  "discovery": {
+    
+    "nanoleaf-aurora": {
+      "type": "mdns-sd",
+      "mdns": {
+        "name": "nanoleafapi",
+        "protocol": "tcp"
+      },
+      "id": "{{txt.id}}",
+      "conditions": [
+        [
+          {
+            "field": "txt.md",
+            "match": {
+              "type": "string",
+              "value": "NL22"
+            }
+          }
+        ]
+      ]
+    },
+    
+    "nanoleaf-canvas": {
+      "type": "mdns-sd",
+      "mdns": {
+        "name": "nanoleafapi",
+        "protocol": "tcp"
+      },
+      "id": "{{txt.id}}",
+      "conditions": [
+        [
+          {
+            "field": "txt.md",
+            "match": {
+              "type": "string",
+              "value": "NL29"
+            }
+          }
+        ]
+      ]
+    }
   }
+  
 }
