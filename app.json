@@ -21,7 +21,7 @@
   "discovery": {
     "nanoleaf-aurora": {
       "type": "mdns-sd",
-      "mdns": {
+      "mdns-sd": {
         "name": "nanoleafapi",
         "protocol": "tcp"
       },
@@ -31,7 +31,7 @@
           {
             "field": "txt.md",
             "match": {
-              "type": "string",
+              "type": "regex",
               "value": "NL22"
             }
           }
@@ -40,7 +40,7 @@
     },
     "nanoleaf-canvas": {
       "type": "mdns-sd",
-      "mdns": {
+      "mdns-sd": {
         "name": "nanoleafapi",
         "protocol": "tcp"
       },
