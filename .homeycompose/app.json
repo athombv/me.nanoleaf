@@ -6,59 +6,16 @@
     "en": "Nanoleaf"
   },
   "description": {
-    "en": "Adds support for Nanoleaf Aurora devices"
+    "en": "Adds support for Nanoleaf devices"
   },
   "category": "lights",
-  "version": "2.0.2",
-  "compatibility": ">=2.1.1",
+  "version": "2.1.0",
+  "compatibility": ">=2.5.0",
   "author": {
     "name": "Athom B.V."
   },
   "images": {
     "large": "/assets/images/large.jpg",
     "small": "/assets/images/small.jpg"
-  },
-  "discovery": {
-    
-    "nanoleaf-aurora": {
-      "type": "mdns-sd",
-      "mdns-sd": {
-        "name": "nanoleafapi",
-        "protocol": "tcp"
-      },
-      "id": "{{txt.id}}",
-      "conditions": [
-        [
-          {
-            "field": "txt.md",
-            "match": {
-              "type": "regex",
-              "value": "NL22"
-            }
-          }
-        ]
-      ]
-    },
-    
-    "nanoleaf-canvas": {
-      "type": "mdns-sd",
-      "mdns-sd": {
-        "name": "nanoleafapi",
-        "protocol": "tcp"
-      },
-      "id": "{{txt.id}}",
-      "conditions": [
-        [
-          {
-            "field": "txt.md",
-            "match": {
-              "type": "string",
-              "value": "NL29"
-            }
-          }
-        ]
-      ]
-    }
   }
-  
 }
