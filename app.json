@@ -9,7 +9,7 @@
     "en": "Adds support for Nanoleaf devices"
   },
   "category": "lights",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "compatibility": ">=2.5.0",
   "author": {
     "name": "Athom B.V."
@@ -49,8 +49,14 @@
         "light_hue",
         "light_saturation",
         "light_temperature",
-        "light_mode"
+        "light_mode",
+        "measure_power"
       ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "approximated": true
+        }
+      },
       "images": {
         "large": "/drivers/aurora/assets/images/large.jpg",
         "small": "/drivers/aurora/assets/images/small.jpg"
@@ -84,8 +90,14 @@
         "light_hue",
         "light_saturation",
         "light_temperature",
-        "light_mode"
+        "light_mode",
+        "measure_power"
       ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "approximated": true
+        }
+      },
       "images": {
         "large": "/drivers/canvas/assets/images/large.jpg",
         "small": "/drivers/canvas/assets/images/small.jpg"

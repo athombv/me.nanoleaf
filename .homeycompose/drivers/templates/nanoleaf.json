@@ -6,8 +6,14 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "measure_power"
   ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "approximated": true
+    }
+  },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.jpg",
     "small": "{{driverAssetsPath}}/images/small.jpg"
