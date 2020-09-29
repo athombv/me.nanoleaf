@@ -9,7 +9,7 @@
     "en": "Adds support for Nanoleaf devices"
   },
   "category": "lights",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "compatibility": ">=2.5.0",
   "author": {
     "name": "Athom B.V."
@@ -122,6 +122,47 @@
       },
       "discovery": "nanoleaf-canvas",
       "id": "canvas"
+    },
+    {
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "approximated": true
+        }
+      },
+      "images": {
+        "large": "/drivers/shapes/assets/images/large.jpg",
+        "small": "/drivers/shapes/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "authenticate"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "authenticate"
+        }
+      ],
+      "name": {
+        "en": "Nanoleaf Shapes"
+      },
+      "discovery": "nanoleaf-shapes",
+      "id": "shapes"
     }
   ],
   "discovery": {
@@ -158,6 +199,25 @@
             "match": {
               "type": "string",
               "value": "NL29"
+            }
+          }
+        ]
+      ]
+    },
+    "nanoleaf-shapes": {
+      "type": "mdns-sd",
+      "mdns-sd": {
+        "name": "nanoleafapi",
+        "protocol": "tcp"
+      },
+      "id": "{{txt.id}}",
+      "conditions": [
+        [
+          {
+            "field": "txt.md",
+            "match": {
+              "type": "string",
+              "value": "NL42"
             }
           }
         ]

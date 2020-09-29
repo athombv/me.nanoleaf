@@ -1,0 +1,7 @@
+{
+  "name": {
+    "en": "Nanoleaf Shapes"
+  },
+  "discovery": "nanoleaf-shapes",
+  "$extends": "nanoleaf"
+}
