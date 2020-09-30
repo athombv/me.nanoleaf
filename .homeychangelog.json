@@ -4,5 +4,8 @@
   },
   "2.2.2": {
     "en": "Nothing really."
+  },
+  "2.3.0": {
+    "en": "Added support for Nanoleaf Shapes."
   }
 }
