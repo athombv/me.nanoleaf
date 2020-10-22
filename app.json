@@ -9,7 +9,7 @@
     "en": "Illuminate Your Life, Your Way."
   },
   "category": "lights",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "compatibility": ">=2.5.0",
   "author": {
     "name": "Athom B.V."
@@ -22,14 +22,18 @@
     "actions": [
       {
         "title": {
-          "en": "Set effect",
+          "en": "Set an effect",
           "nl": "Start een effect"
+        },
+        "titleFormatted": {
+          "en": "Set [[effect]] effect",
+          "nl": "Start [[effect]] effect"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=aurora|canvas"
+            "filter": "driver_id=aurora|canvas|shapes"
           },
           {
             "type": "autocomplete",

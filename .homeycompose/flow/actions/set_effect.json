@@ -1,13 +1,17 @@
 {
   "title": {
-    "en": "Set effect",
+    "en": "Set an effect",
     "nl": "Start een effect"
+  },
+  "titleFormatted": {
+    "en": "Set [[effect]] effect",
+    "nl": "Start [[effect]] effect"
   },
   "args": [
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=aurora|canvas"
+      "filter": "driver_id=aurora|canvas|shapes"
     },
     {
       "type": "autocomplete",
